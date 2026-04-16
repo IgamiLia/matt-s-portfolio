@@ -62,7 +62,6 @@ const openContactModal = (e) => {
 };
 
 contactLink.addEventListener("click", openContactModal);
-contactFooterLink.addEventListener("click", openContactModal);
 
 closeModal.addEventListener("click", () => {
   contactModal.classList.remove("active");
