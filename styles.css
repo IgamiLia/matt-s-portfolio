@@ -196,45 +196,20 @@ main {
   gap: 0.4rem;
   padding: 0.4rem 0.8rem;
   border-radius: 1rem;
+  border: 1px solid #068cb8;
   background-color: #040612;
   font-size: 0.8rem;
   font-weight: 600;
   overflow: hidden;
   z-index: 1;
   transition: all 0.3s ease;
-}
-.contact-main a::before {
-  content: "";
-  position: absolute;
-  inset: -1000%;
-  background-image: conic-gradient(
-    from 90deg at 50% 50%,
-    #068cb8,
-    #0c334f,
-    #0d1b2a,
-    #0c334f,
-    #068cb8
-  );
-  animation: rotate 2s linear infinite;
-  z-index: -1;
-}
-.contact-main a::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background-color: #040612;
-  border-radius: calc(1rem - 1px);
-  z-index: -1;
+  cursor: pointer;
 }
 .contact-main img {
   width: 1rem;
   height: 1rem;
 }
-.contact-main a:hover {
-  background-color: #0c334f;
-  color: #fff;
-  transform: scale(1.2);
-}
+
 #projects {
   position: relative;
   display: grid;
@@ -352,48 +327,19 @@ main {
   gap: 0.8rem;
   padding: 0.4rem 0.8rem;
   border-radius: 1rem;
+  border: 1px solid #068cb8;
   background-color: #040612;
   font-size: 0.8rem;
   font-weight: 600;
   overflow: hidden;
   z-index: 1;
   transition: all 0.3s ease;
-}
-.code::before,
-.preview::before {
-  content: "";
-  position: absolute;
-  inset: -1000%;
-  background-image: conic-gradient(
-    from 90deg at 50% 50%,
-    #068cb8,
-    #0c334f,
-    #0d1b2a,
-    #0c334f,
-    #068cb8
-  );
-  animation: rotate 2s linear infinite;
-  z-index: -1;
-}
-.code::after,
-.preview::after {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background-color: #040612;
-  border-radius: calc(1rem - 1px);
-  z-index: -1;
+  cursor: pointer;
 }
 .code img,
 .preview img {
   width: 1rem;
   height: 1rem;
-}
-.code:hover,
-.preview:hover {
-  background-color: #0c334f;
-  color: #fff;
-  transform: scale(1.2);
 }
 
 #about {
@@ -571,6 +517,56 @@ footer > p > a:hover {
   font-weight: 600;
 }
 
+.wsp-floating-icon {
+  z-index: 100;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  background-color: #040612;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.wsp-floating-icon::before {
+  content: "";
+  position: absolute;
+  inset: -1000%;
+  background-image: conic-gradient(
+    from 90deg at 50% 50%,
+    #068cb8,
+    #0c334f,
+    #0d1b2a,
+    #0c334f,
+    #068cb8
+  );
+  animation: rotate 2s linear infinite;
+  z-index: -1;
+}
+.wsp-floating-icon::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background-color: #040612;
+  border-radius: 50%;
+  z-index: -1;
+}
+.wsp-floating-icon img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 2px #50a8b7);
+  position: relative;
+  z-index: 10;
+}
+.wsp-floating-icon:hover {
+  transform: scale(1.1);
+}
+
 @media (min-width: 1200px) {
   main {
     max-width: 50vw;
@@ -605,6 +601,11 @@ footer > p > a:hover {
   .projects-container > div {
     margin-bottom: 3rem;
   }
+  .contact-main a:hover {
+    background-color: #0c334f;
+    color: #fff;
+    transform: scale(1.2);
+  }
   #projects h2 {
     margin-bottom: 3rem;
   }
@@ -613,6 +614,12 @@ footer > p > a:hover {
     gap: 1rem;
     list-style: none;
     margin: 0.5rem 0;
+  }
+  .code:hover,
+  .preview:hover {
+    background-color: #0c334f;
+    color: #fff;
+    transform: scale(1.2);
   }
   #about img {
     grid-area: image;
