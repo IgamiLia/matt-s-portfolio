@@ -297,6 +297,7 @@ main {
   margin: 0.5rem 0 1rem 2.5rem;
 }
 .tec-projects {
+  filter: brightness(0.8);
   display: flex;
   align-items: center;
   justify-content: center;
