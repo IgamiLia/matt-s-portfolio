@@ -96,6 +96,7 @@ ul {
 main {
   display: grid;
   gap: 2rem;
+  max-width: 800px;
 }
 .work {
   grid-area: work;
@@ -112,28 +113,35 @@ main {
     "title"
     "description"
     "contact";
-  text-wrap: balance;
+  text-wrap: pretty;
   height: 100%;
+  max-width: 500px;
 }
 .profile-pic {
   grid-area: image;
   border-radius: 100%;
   width: 120px;
   height: 120px;
+  border: 1px solid #068cb8;
+  padding: 1px;
 }
 
 .presentation h1 {
   grid-area: title;
 }
 .presentation h1 span {
-  color: #f5901d;
+  color: transparent;
+  background: linear-gradient(to bottom, #f5901d, #e7c6a1 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 .presentation p {
   grid-area: description;
   font-size: clamp(1rem, calc(0.636rem + 1.818vw), 1.5rem);
+  margin-bottom: 1rem;
 }
 .presentation p span {
-  color: #f7df1e;
+  color: #e5bf74;
 }
 
 .presentation a {
@@ -280,6 +288,7 @@ main {
 }
 .project-name-pc {
   display: none;
+  color: #e5bf74;
 }
 .projects-container p {
   font-size: clamp(0.813rem, calc(0.699rem + 0.568vw), 1.125rem);
@@ -348,10 +357,11 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(2rem, calc(0.909rem + 5.455vw), 5rem);
   width: 100vw;
   height: auto;
   padding: 1rem;
+  max-width: 800px;
 }
 #about h2,
 .h2-pc {
@@ -622,6 +632,7 @@ footer > p > a:hover {
     color: #fff;
     transform: scale(1.2);
   }
+
   #about img {
     grid-area: image;
     width: 20vw;
@@ -637,6 +648,8 @@ footer > p > a:hover {
     flex-direction: row;
     justify-content: center;
     width: 50vw;
+    max-width: none;
+    margin-bottom: 2rem;
   }
   #about > div {
     display: grid;
